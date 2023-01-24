@@ -14,6 +14,48 @@
         function myfunction(a,b){
             return a*b;
         }
-    </script>
+        // local variable 
+        var x = myfunction1(1,2);
+        function myfunction1(a,b){
+            var vishal = 123;
+            // this is local variable , its not called out side of the function
+            return a*b*vishal;
+        }
+        // global variable 
+        var x1 = 123;
+        var x3 = myfunction2(1,2);
+        function myfunction(a,b){
+            var y = a+b+x1;
+            return y;
+            // we can use this global variable inside the function and out side the function 
+
+        }
+        //same name local and global variable 
+        var x= "vishal";
+        function vishal(){
+            var x = "hello this is a local ";
+            return x;
+        }
+        // if we print both 
+        console.log(vishal());// its print hello this is a local 
+        console.log(x);// this is print vishal 
+       
+        //To print an array of objects properly, you need to format the array as a JSON string using JSON. stringify() method a
+        var testarr = [1,2,3,3];
+        console.log(JSON.stringify(testarr));
+        
+        var x = [1,2,3,4];
+        console.log(JSON.stringify(x));
+        // before modify our array print as list 1,2,3,4
+         
+        function myfunction(x,item){
+            x.push(item);
+            x.shift();
+            return x;
+
+        }
+        var y = myfunction(x,5);
+        console.log(JSON.stringfy(x));
+        // print array after modification as 5,2,3,4
 </body>
 </html>
