@@ -46,9 +46,238 @@
    document.getElementById("demo").innerHTML=Date();
      }
 
+     // string 
+     var vishal = "hello this is a vishal baraiya ";
+     // string can be difined  as a object of a string with new keyword 
+     var vishal1 = new String("hello this is a string object ");
+     // do not create string object its complicate the code and slows down the system 
+     
+     
+     // while using the == x and y are the same 
+      let x= "vishal";
+      let y = new String("vishal");
+      if (x==y){
+        document.write("both are same ");
+      }else {
+        document.write("not same ");
+      }
+      // if we use === operator , x and y are not equal 
+    if(x===y){
+        document.write("same");
+    }else {
+        document.write("not same");
+    }
+    // == check the value of the variable 
+    // and === cheak the value as well as data type of the variable 
 
-        
+   /// if you compare two object than its always show false 
+   // because of every time new keyword generat new object 
 
-    </script>
+let x = new String("johan");
+let y = new String("johan");
+if(x===y){
+    document.write("its not print during the execution")
+}else{
+    document.write("work during execution");
+}
+   // length of string 
+   var vishal = "hello guys ";
+   console.log(vishal.length);
+   //extracting a parth of a string 
+   // slice(start,end);
+   //substring(start,end);
+   //substr(start,length);
+   
+   
+
+   // slice tack two parameter ;start position and end position but end position is not include 
+   let vishal = "hellovishal";
+   let partofvishal = vishal.slice(1,4);
+   console.log(partofvishal); // output .. ell
+  vishal.slice(1);//ellovishal
+  // if we provied negatie index then it start from end of the string 
+  vishal.slice(-8);// ovishal
+
+
+  // substring is similar to slice()
+  // but is we put negative value there than it just set 0 this negative value 
+   
+  //substr is same as the slice() 
+  // but differant is that it secound parameter is represent as lengthof the substring
+
+    let str = "Apple, Banana, Kiwi";
+let part = str.substr(7, 7); //Banana, 
+
+// replace the string content using replace() method 
+ let text = "Please visit Microsoft!";
+ let newtext = text.replace("Microsoft","vishal");
+ // its replace Microsoft into vishal 
+ // replace method does not change our string , it creat new string 
+ // replave method replace only first character in the given string other word stay as it is 
+ //  for replaceAll word into given string we can use replaceAll() method 
+
+
+ // converting uppercase and lowercase 
+ let vishal = "hello word ";
+ let vishaluppercase  = vishal.toUpperCase();
+ let vishal2 = "HELLO WORD ";
+ let vishal2lowwercase = vishal2.toLowerCase();
+document.write(vishaluppercase);//HELLO WORD
+document.write(vishal2lowwercase);//hello word
+
+// string is inmutable we can not change our original string 
+// we can just just create a new string for our differant operation 
+
+// concate() method is used for plus two string as plus operator 
+let text1 = "Hello";
+let text2 = "World";
+let text3 = text1.concate(text2);//HelloWorld
+let text4 = text1.concate(" ",text2); // Hello Word
+
+// trim() method is used to remove whitespace form both side our string 
+let x = "     hello visha    ";
+let y = x.trim();
+document.write(y); // hello visha
+// trimStart() is used to remove whitespace from start of the string 
+// trimEnd() is used to remove whitespace end of the string 
+
+
+// THE padstart() is a method that is used to pads a string with another string 
+// its string method so we have to requried first convert our number into string form 
+
+let num = 5;
+let text = num.toString(); // this is used to convert number into string 
+let padded = text.padStart(4,"0"); // padded is 0005
+let paddedend = text.padEnd(4,'x');// paddedend is 5xxx
+
+// charAt()
+let text = "hello this is a vishalbaraiya";
+let char  = text.charAt(0);
+//char = h
+
+// charCodeAt() method is used to get unicode for that character 
+let text = "HELLO WORD";
+let number = text.charCodeAt(0);
+// output is 72
+
+let text = "hello this is a vishal baraiya ";
+let x = text[0];// x = h
+
+text[0] = "a";
+// its not work , but its not provied error 
+
+
+// split() method is used to convert string into array 
+let text = "a,b,c,d,e,f,g";
+let myarr = text.split(",");
+document.write(myarr[0]);
+// print a
+
+let text = "hello";
+let arr = text.split("");
+for(var i=0;i<arr.length;i++){
+    document.write(arr[i]);
+}
+// print output
+// h
+// e 
+// l 
+// l 
+// o
+
+var vishal = " vishal " ;
+ var vk = " baraiya ";
+ var text = 'hello i am ${vishal} and my surname is ${vk};
+
+
+
+let header  = "hello this is a vishal baraiya";
+let arr = ["vishal","bhagi","urvish","jayendra"];
+let html1 = '<h2>${header}</h2><ul>';
+for (var i = 0;i<arr.length;i++){
+    html+='<li> ${x}</li>';
+}
+html += '</ul>'
+
+
+
+//javascript has only one type of a number 
+// number can be write with decimal or without decimal 
+// extra large or extra small number can be write in scintific notation 
+let x= 123e5; // 12300000
+let x = 123e-5; // 0.00123
+// js number is upto 15 digit 
+let x = 999999999999999;
+let y = 9999999999999999; // its not give currect ans 
+// its work as eny number like 10000000000000000000...
+// in js number is accurate only upto 15 digit 
+
+// floting point operation is not always accurate
+let num = 0.1+0.2 ;
+// its give like 0.3000000004;
+
+
+// in js we can use + operater as addition as well as concatination in string 
+
+let x=10;
+let y=20;
+let z=x+y;
+// 30
+let x="10";
+let y="20";
+let z=x+y;
+//1020
+let x = 10;
+let y = 20;
+let z = "30";
+let result = x + y + z;  //The JavaScript interpreter works from left to right.
+// 3030
+// js try to convert str to num when its perform dividing 
+let x = "100";
+let y = "10";
+let z = x / y;
+
+//10
+let x = "100";
+let y = "10";
+let z = x - y; 
+//90
+
+// but addition is not work in string as arithmetic
+
+//NaN mence not a number 
+// when we divid a number into string then its give NaN
+
+let x = 100 / "Apple"; // give NaN
+let x= 100/"10"; // 10
+
+// we can use isNaN() to find ot if a value is not a number 
+let x= 100/"10";
+isNaN(x);// false because it is a number so ....
+let x = 100/"abcd"; // true .. it is a NaN 
+
+// if ypu can perform mathemeticals operation with Nan then result is always NaN 
+let x = NaN;
+let y = 3;
+let z = x+y; // z is NaN
+
+// NaN is a number: typeof NaN returns number 
+
+let x = NaN;
+let y = "5";
+let z = x + y; // NaN5
+
+//infinity is a valur in js will return if you calculate a number out side of the range 
+
+let nym = 2;
+ if ( nym == infinity){
+    document.write("its not   a perform ");
+ }else {
+    document.write("its perform");
+ }
+ let x = 2/0 // geive infinity
+ // type of infinity is a return number 
+ 
+</script>
 </body>
 </html>
