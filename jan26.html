@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // java array 
+    // array is a special variable that can store more than one value 
+    const arra = ["vishal","payal","radha"];
+    const arra1 =[];
+    arra1[1]=1;
+    arra1[2]=2;
+    arra2[3]=3;
+
+    const arra2 = new Array("vishal","baraiya","kanajibhai");
+    // we did not used this method because of execution speed 
+    // array is a special type of a object type of the key word is return "object"
+
+
+    arra.sort();// used to sort the array 
+    arra.length ; // used to find the size of the array 
+    let char1 = arra[arra.length-1]; // used to acces last element of the array 
+
+    // loop in array for print the given elenet 
+    var vishal = "<ul>";
+        for(var i=0;i<arra.length;i++){
+            vishal +="<li> arra[i] </li>";
+        }
+        vishal +="</ul>";
+
+        //push() method is used to add element into array in last position in array
+        arra.push("vishalbaraiya ");
+        // its work same like 
+        arra[arra.length]="vishalbaraiya";
+
+        //adding element with large index can create undefined "holes";
+        const fruits = ["Banana", "Orange", "Apple"];
+        fruits[6]="lemon";
+        // if you print the given array then output is that
+        // Banana
+        // Orange
+        // Apple
+        // undefined
+        // undefined
+        // undefined
+        // Lemon
+
+
+        // what is a differant betwen array and object in js 
+        // array is used number for index 
+        // object is used named index 
+        // array are a special kind of object that used index as a number 
+
+
+        Array.isArray(fruits);
+        // it is return true becaue its array so 
+        fruits.toString();// it is used to print our array as string 
+
+        // join() method is used to join our array element 
+        const array1 = [1,2,3,4,5,6];
+        var vishal = array1.join("*");
+        // 1*2*3*4*5*6
+
+        // when you work with array then push and pop is easy for element 
+        array1.push("vishal");
+        // push element into last index of the array 
+        // pop element into last index of the array
+        array1.pop();
+          
+        // shift and unshift elemnt is used to perform operation into index zero in our array
+        array1.unshift("vishal"); // insert into first index 
+        array1.shift(); // delet item into index zero 
+
+     // using delete operator we can delete given item but leaves undefined holes into array 
+      // insted delete operator just use pop() or shift()
+       delete array1[0];
+
+
+       // concat of the two array 
+       const myGirls = ["Cecilie", "Lone"];
+       const myBoys = ["Emil", "Tobias", "Linus"];
+
+       const vk = myGirls.concat(myBoys);
+
+       // splice() is used to add new item in the array 
+       // first parameter is use to define where we can insert our element 
+       // secound parameter is define how many element is remove form the element 
+       // the rest of the element difine to add new element into array 
+
+       const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.splice(2, 2, "Lemon", "Kiwi");
+  
+   
+
+      // slice() give a part of the array 
+      const vish = fruits.slice(1);
+
+       
+
+      // java script automaticaly convert array  to a comma seperated string when we print array
+      // this both are same 
+      document.write(fruits);
+      document.write(fruits.toString());
+       
+      // reverse() method is used to reverse the array
+      array1.sort();
+      array1.reverse();
+
+       // sort method is used only for string 
+       // its not work well for number 
+
+   // its solve when you provied compare function 
+
+   const x = [1,2,6,7,4,9,8];
+   x.sort(function(a,b){
+    return a-b;
+   });
+
+   document.write(x);// 1,2,4,6,7,8,9
+
+
+   // print array into reverse order 
+   x.sort(function(a,b){
+    return b-a;
+   });
+
+
+   // sort array into any random order 
+   x.sort(function(){
+    return 0.5 - Math.random();
+   });
+
+
+   // find highest and lowest value in javascript 
+   
+   var a =[1,4,2,8,3];
+   a.sort(function(a,b){
+    return a-b;
+   })
+
+   var min = a[0];
+   var max =a[a.length];
+
+   // we can use Math.max.apply(null,arr) for the highest value 
+   // and for the lowest value we can use Math,min.apply(null,arr);
+
+   // creat your funtion for min max 
+   function fmax(a){
+    var max = -Infinity;
+    for(var i=0;i<a.length;i++){
+  
+        if(max<a[i]){
+    max =a[i];
+        }
+    }
+   }
+
+   function fmin(a)
+{
+
+    var min = Infinity;
+    for(var i=0;i<a.length;i++){
+        if(a[i]<min){
+            min = a[i];
+        }
+    }
+}   
+
+
+// for each loop in js 
+
+let num = [42,51,24,98,12];
+nums.forEach(n => {
+    console.log(n);
+});
+
+// output 
+// 42
+// 51
+// 24
+// 98
+// 12
+
+
+// we can also pass index value into our function 
+num.forEach((n,i,num)=>{
+    console.log(n,i);
+});
+
+// output 
+// 42  0
+// 51  1
+// 24   2
+// 98  3
+// 12  4
+
+
+
+</script> 
+</body>
+</html>
