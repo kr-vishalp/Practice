@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // map function 
+
+        // the map() method is used create a new array by performing a function on each array element 
+
+        const arr =[1,2,3,4];
+        // double the arr using array function 
+
+        function double (x){
+     return x*2;
+        }
+
+        const double  = arr.map(double);
+
+        // triple the value of the arr
+
+        function triple(x){
+            return x*3;
+        }
+         const triple = arr.map(triple);
+
+         // convert into binary string 
+
+         function binary(x){
+            return x.toString(2);
+         }
+
+         const binary = arr.map(binary);
+
+         // we can also pass direct functon into map function
+
+         var value = arr.map(function double(x){
+            return x*2;
+         });
+
+         // we can also pass the array function into map method 
+
+         var value = arr.map((x) => {
+            return x*2;
+         });
+
+         
+
+         var value = arr.map(x=>x*2);
+
+
+         // filter method 
+
+         // filter method create a new array for elemnts who pass in the test 
+
+         // example create a new array who have value is gather then 18 
+
+         const numbers = [45,4,9,16,25];
+         function myfunction(value, index,array){
+            return value>18;
+         }
+
+         const newarr = numbers.filter(myfunction);
+
+    // function tack 3 arguments 1.item value 2.item index 3.array it self .... in filter method as well as map method 
+    
+    // in the above example if you not pass the 2, 3 item then its ok , because it is not requried 
+
+
+    // reduce() method 
+    // reduce method is runs a  function on each array item and produce a single value 
+   // the reduce method work from left to right in the array 
+   // this all method not changed original array but it just give new array 
+
+
+   // find the sum of the all element in the array 
+
+   const arra3 =[1,2,3,4,5];
+   function myfun(total,value,index,arra3){
+     return total + value;
+   }
+
+   var sum = arra3.reduce(nyfun);
+   // give sum 15
+
+   // function tack the intial value for total 
+
+   const number = [1, 1, 1, 1, 1];
+   let sum = numbers.reduce(myFunction, 100);
+   // give 105 output 
+
+
+
+   // every() 
+   // check every element in the array pass into the given condition or not 
+  
+   var num = [45, 4, 9, 16, 25];
+   var result = num.every(allover18);
+
+   function myfunction(value,index,num){
+  return value >18;
+   }
+
+
+    // some() method check is some element is pass in the test case 
+
+
+ var num = [45, 4, 9, 16, 25];
+   var result = num.some(allover18);
+
+   function myfunction(value,index,num){
+  return value >18;
+   }
+
+  
+   // find()
+   // find method return element who pass the fist into  our given condition 
+   var number1 = [4, 9, 16, 25, 29];
+   var resultno = number1.finde(myfun1);
+   function myfun1(value,index,number1){
+    return value>18;
+   }
+
+   // give output value 25 
+
+
+
+   // if we diclared array with const keyword then we cam not reassigned array
+   // but we can change the array element 
+
+   // it s not work in js 
+    // const cars;
+    // cars = ["Saab", "Volvo", "BMW"];
+    // js const variable must be assigned when we difine this 
+    // after thet we can not modify this 
+
+    // if you can diclare with var then we can assigned any time 
+
+
+            const cars1 = ["Saab", "Volvo", "BMW"];
+        // Here cars[0] is "Saab"
+        {
+        const cars1 = ["Toyota", "Volvo", "BMW"];
+      // Here cars[0] is "Toyota"
+        }
+        // Here cars[0] is "Saab" 
+
+
+
+                const cars = ["Saab", "Volvo", "BMW"];
+        // Here cars[0] is "Saab"
+        {
+        const cars = ["Toyota", "Volvo", "BMW"];
+        // Here cars[0] is "Toyota"
+        }
+        // Here cars[0] is "Saab" 
+    </script>
+</body>
+</html>
