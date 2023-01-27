@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // loop is used if you want to run your code again and again 
+
+        // normal for loop 
+        for(var i=0;i<10;i++){
+            console.log(i);
+        }
+
+        // for each  loop
+        //forEach() calls a function for each element in an array:
+        // for each loop is used to access every element in javascript 
+      var number =[1,2,3,4];
+     var sum =0;
+    number.forEach(num => {
+        sum = sum+num;
+    });
+    document.write(sum);
+//10
+
+
+// for in loop 
+// its take index of our array
+
+for(num in number){
+  document.write(num);
+  }
+
+  // 0 1 2 3
+
+  // most its used for object 
+  // each operation return key value 
+  // the key  is used to access the value 
+
+
+  var person = {
+    fname:"vishal";
+    sname:"baraiya";
+    cname:"LD";
+
+  };
+  for(x in person ){
+    document.write(x);
+  };
+  // fname , sname, cname 
+
+  for(x in person){
+    document.write(person[x]);
+  }
+  // vishal baraiya LD 
+
+  for(x in person){
+    document.write(x);
+  };
+  // fname sname cname 
+
+  // for of 
+
+  // its direct provied value 
+var person = [1,2,3,4,5];
+  for(var x in person ){
+    document.write(x);
+  };
+  // 12345
+
+//while loop in js 
+while(i<10){
+    document.write(i);
+    i++;
+};
+//123456789
+
+// in while loop if you forget to increase the variable in the condition than your loop is never end and your browser crash 
+
+
+// do while loop 
+// if condition is not true then also its run one time 
+var i=10;
+do {
+    document.write(i);
+    i++;
+}while(i<10);
+// output 10
+
+// break and continue statement 
+// the break statement is also used to jump out into the switch statement 
+
+for(int i=0;i<10;i++){
+    if(i==3){
+        break;
+    }
+    document.write(i);
+};
+// 0,1,2
+// continue statement is used to skip the statement 
+for(var i=0;i<10;i++){
+    if(i==3){
+        continue;
+    }
+    document.write(i);
+};
+//0,1,2,4,5,6,7,8,9
+     
+    </script>
+</body>
+</html>
