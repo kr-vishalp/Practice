@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // hash set in js 
+    const set1 = new Set(["a","b","c","c"]);
+    document.write(set1.size);
+    // return 3 
+    // set store unique value only 
+    set1.add("v");
+    var vishal = "m";
+    set1.add(vishal);
+    // if you add equal element than first only add in set 
+
+
+
+    set1.forEach(function myfunction(value)){
+        document.write(value);
+    }
+    //abcvm
+
+    for(var i of set1.values()){
+        document.write(i);
+    }
+
+
+
+    // map in js 
+
+    // map store key and value 
+    // key is unique
+    const map1 = new Map([
+        "vishal":200;
+        "baraiya":300;
+        "jay":400;
+    ]);
+
+    map1.forEach(function myf1(value){
+        document.write(value);
+    })
+    // 200300400
+
+
+    // add element using set method 
+    map1.set("parul",500);
+    // we can aslo change value in the set using set method 
+    map1,set("vishal",1000);
+    var num = map1.get("vishal");
+    // num = 1000
+
+    var num = map1.size;
+    // num =4 size of map 
+  
+    // delete() remove the element in the map 
+
+    map1.delete("vishal");
+
+    // the has() method return the true if the value is exist in the map 
+
+    if(map1.has("baraiya")){
+        document.write("value is in the map1");
+    };
+
+
+    // print map value 
+
+    map1.forEach(function myf1(value,index){
+        // index == key
+        document.write(value+ " "+ index);
+    });
+
+    for (var i of map1.entries()){
+        document.write(i);
+    };
+
+    // i is give value and key both 
+    // like vishal1000baraiya200....
+
+    // type of in js 
+
+    // type of is provied variable type in js 
+
+      var vishal = 123;
+
+     document.write(typeof"vishal");
+   
+   // array - object 
+   // NaN - number 
+   // date - object 
+   //null - object 
+   // undefined - undefined 
+   // if variable that has not the assigned vale is undefined 
+  // typeof is a operator that is not a data type 
+ // null==undefind true 
+ // null === undefind false
+
+
+ // type conversion in js 
+  
+ // for conver into number we cam use Number() mwthod 
+
+
+ document.write(" "); // 0
+ document.write("vishal"); // NaN
+ document.write("3.14"); // 3.14
+
+ document.write(parseInt("314"));// 314
+
+ document.write(parseInt("3.14"));// 3
+ document.write(parseInt("vishal"));// not give output
+  
+ 
+ // for converting a number into stirng 
+ // .toString()
+ var x = (123+12).toString();
+ document.write(typeof v); // String
+ document.write(v); // 135
+ var d = new Date()
+document.write(d); // print date 
+document.write(typeof d); // object
+var m = d.toString();
+document.write(typeof m);// String 
+
+
+var n = "4"*"2";
+document.write(n); // 8
+document.write(typeof n); // number 
+
+//Math method 
+Math.round(5.0002);//5
+Math.round(4.5);//5
+Math.round(4.3);//4
+
+Math.floor(4.7);//4
+Math.ceil(4.7);//5
+Math.min(1,2,3,4);//1
+Math.max(1,2,3,4);//4
+
+
+// Math.random() return a random value 0 to 1 
+// 0 is inclusive and 1 in exclusive
+
+var num = Math.floor(Math.random()*10);// give number between 0 to 9
+
+var num = Math.floor(Math.random()*10)+1;// give 1 to 10
+
+
+
+// bit wise operation in js 
+// in js bitwise operation perform in 32 bit number 
+// before biwise operation js convert this into 32 binary number 
+// 5 ---0101
+//1 ---0001
+
+
+// and 
+// if both bit are same then it convert into 1 otherwise 0
+var num = 5&1 // 0001  // 1
+// in OR operation if one bit are same then give output one 
+
+var num = 5|1 // 0101 // 5
+
+// ~ 0 to 1 and 1 to 0
+var num = ~5 // 1010 // 10
+
+// xor oepration 
+//if both value is same then give 0 
+var num = 5^1 // 0100 // 4 
+ // << left shift 
+ var num = 5<<1 // secound 1 is represent to perform one leftshift operation 
+ // 5 ==0101 to 1010 // 10
+
+ // >> right operation 
+ var num = 1>>5 // 0010 //2
+
+
+ // regular expression 
+ // used to find a text in a given string 
+
+ // i perform case-insensitive matching 
+ var string1="hello this is a VishalBaraiya";
+ var result =text.match(/vishalbaraiya/i);
+ document.write(result); // VishalBaraiya
+ // g perform global math... perform all matches rather than stoping after first math 
+
+ var String1 = "hello hello vishal is here , hello ";
+ var result = match(/hello/g);
+ // hello,hello,hello
+
+// m is used to search for line 
+// just give starting word if it start from there than its return this word other wise it return null
+
+var string3 = "hy yyy";
+var stri = string3.match(/h/m);
+document.write(stri);
+// h 
+var string3 = "hy yyy";
+var stri = string3.match(/hello/m);
+document.write(stri);
+// null .. its represent our given string is not start from hello 
+
+// match() method is return match value 
+// test() method return true or false based on match value 
+//if value is match then it print just true other wise it print false 
+
+
+let text1 = "hello this is a vishal baraiya ";
+const pattern = /e/;
+document.write(pattern.text(text1));
+// true .. because  e is present in the given string
+
+
+
+// try catch and finally statement 
+// when error happen js will be stop and genetate error 
+
+try{
+    //block of code of execute 
+
+}
+catch(err){
+    // handle error if happen in the given try block 
+}
+finally{
+    // its always execute 
+}
+
+
+
+
+const msg = "hello";
+try{
+    if(NaN==Number(msg))throw "is not a number ";
+    else if(msg.trim()=="")throw "empty";
+    else if(NaN==Number(x)) throw "not a number ";
+    else "it is a number "
+}
+catch(err) {
+document.write(err);
+}
+finally{
+    document.write("its give always output ");
+}
+
+
+// range error in js 
+ try{
+    var num =1;
+    num.toPrecision(5000);// 5000 is out of the range 
+ }
+ catch(err){
+    document.write(err.name);// print error name 
+ }
+
+
+ // referance error
+ // if you use a variable that not declared
+
+var x=5;
+ try{
+ 
+    var z = y+x; // we can noy use y without declared its show error 
+ }
+    catch(err){
+        document.write(err);
+    }
+
+
+ //syntax error 
+ 
+ // its happen if you try to evaluate code with sysntax error 
+
+
+ // type of error 
+ // this error is heppen if value is outside the range of the expected value 
+
+ let num = 1;
+ try{
+    num.toUpperCase();// we cant convert number to upper case 
+ }
+ catch(err){
+    Document.write(err);
+ }
+
+ // url error 
+
+
+ try{
+    decodeURI("%%%"); // we can not decode the url this 
+ }catch(err){
+    document.write(err);
+
+ }
+
+
+
+ // scope in js 
+ // blockscope , function scope , global scope 
+
+ // variable declared in block can not be access outside of the block 
+ {
+    let x = 1;
+ }
+
+ // we can not use x here 
+
+ // variable declared with var keyword can not have block scope 
+ {
+    var x=1;
+ }
+ // we can access here x
+
+
+ // local scope 
+ // variable declared within a function become a local to the function
+ // local variable have function scope 
+
+
+ function myfun(){
+    let x = 1; // function scope 
+ }
+
+
+
+ // variable declared outside the function become a global scope 
+ // all script and function can access this global variable 
+ // in js object and function also variable 
+
+
+ // if you can not declare variable than it automaticlly become global
+// because its consider var 
+
+
+   </script> 
+</body>
+</html>
+
+
+
+
