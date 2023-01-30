@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // oop in js 
+
+        // js class is not an object 
+        // it is a templet of object 
+        // object is a instance of class 
+        // when you have class then for createtung object you just use this class 
+        // constructer is used to intialize object 
+        // when we creact  a object at that time constructer is automaticaly called 
+        //if we did not write constructer then by defualt its automaticy create 
+
+
+
+        // exmple 
+
+        class Car {  // Car is a class 
+            constructor(name,year){  // creat constructer for intialized name and year 
+                this.name = name;
+                this.year= year;
+            }
+            age(){  // define age method for find current age of the car 
+               let date = new Date();
+               return date.getFullYear() -this.year ; 
+            }
+
+        }
+
+// creat object for class Car 
+ let obj1 = new Car("ford",2014);
+ document.write("my car arge is "+ obj1.age());
+   
+ 
+ // module 
+ // module is used to separate file 
+ // used to imported file import statment 
+
+ import messge from "./filr.js";
+
+ export default messge;
+
+
+ // json 
+
+ // json is a format for storing a data and transporting data 
+ // json is used when we want to sent to data from a server to a web page.
+ // json mence javascript object notation 
+ // javascript program can easy convert json data into native javascript objects
+ // json comanly used to read data from web server 
+
+
+ // JSON.Parser() is used to convert json string to js object 
+
+
+ const obj = JSON.parse(text); 
+
+ let text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}'; 
+ 
+
+
+// searching for error in programing code is called debugging 
+// debugging is give error to user 
+// we can debugging in our laptop using f12 key
+
+//in a debugger window you can set breakpoint in the javascript code
+// and each breakpoin js will stop to executing code and give you result 
+// debugging is the process of testing , finding  and reducing bugs in computer programs 
+
+
+
+
+let x = "Hello";// typeof x is a string
+x = 5;// changes typeof x to a number 
+
+// == value 
+// === value  and type 
+
+
+
+function myf1(a){
+    let power =10;
+    return 
+    power * a;
+}
+// return undefined 
+// never break the return ststment 
+
+
+// json is used to send data from webserver and recieve data from a webserver 
+
+
+// JSON.parse() is sued to convert string into object 
+// JSON>sringify() is used to conver object to string 
+
+
+// property of the getter and setter 
+
+var person ={
+    firstname:"vishal";
+    lastname:"baraiya";
+}
+
+// uset the value of firstname 
+person.firstname="hello";
+// get the value of the firstname 
+var name  = person.firstname;
+
+
+// we can do this same method using gether and setter method
+
+var person  = {
+    firstname="vishal";
+    lastname :"baraiya";
+
+    set fname(value){
+        this.firstname = value ;
+    }
+
+    get fname(){
+        return this.firstname;
+    }
+};
+
+// set value 
+ person.fname = "vkbhai";
+ var name = person.fname ;// vkbhai 
+
+
+// object in js  its literal method 
+ 
+
+const person = {
+    firstname:"vishal";
+    lastname:"baraiya";
+    age :21;
+}
+
+// othe method for difine object in js 
+const person ={};
+person.firstname="vishal";
+person.lastname ="baraiya";
+person.age=21;
+
+
+// using new keyword create object 
+
+const person = new Object();
+person.firstname="vishal";
+
+// for readability , simplicity and executuns speed ,we just used object literal method 
+
+// object are mutable ..................
+// we can change value of the object 
+
+conat x = person;
+// will not a create a copy of the person 
+// if we change anything into x it is also change in person 
+
+
+
+const person ={
+    firstname ="vishal";
+    lastname = "baraiya";
+
+}
+
+const x = person ;
+
+x.firstname ="sanket "; // its change our object person firstname 
+
+// so in object .. property can be changed ,aded , delete   but some are redy only 
+
+for(x in person){
+    document.write(x);// firstname, lastname
+}
+
+for(var x in person){
+    document.write(person.x);  // undefind .....
+}
+
+for(var x in person){
+    document.write(person[x]);
+}
+
+// adding new property in object 
+person.city = "bhavnagr";
+
+// deleteing properties 
+delete person.age ;
+
+
+// nested object 
+// object inside other object 
+
+myObj = {
+name:"John",
+  age:30,
+  cars: {
+    car1:"Ford",
+    car2:"BMW",
+    car3:"Fiat"
+}
+}
+
+// give car2 value in the given object 
+var value = myObj.cars.car2;
+
+var value = myObj.cars["car2"];
+
+
+
+// value in array is object , and this array inside the object 
+
+const myObj = {
+    name:"johan ",
+    age:20,
+    cars:[
+        {name:"ford",
+    models:[1,2,3],
+        },
+        {
+            name:"bmw",
+            models:[2,3,4]
+        },
+        {
+            name:"fiat"
+            modesl:[5,6,7]
+        }
+    ]
+
+}
+
+
+// accessing array in the given object 
+
+for(var i in myObj.cars){ // give model array index 
+   document.write(myObj.cars[i].name);// print cars name 
+   
+   for(var j in myObj.cars[i].models){ // give model array index 
+    document.write(myObj.cars[i].models[j]) // print model value 
+   }
+}
+
+
+
+// method in object 
+
+
+const person = {
+    firstname:"vi",
+    lastname:"bara",
+    fullname: function(){
+        return this.firstname+ " " + this.lastname;
+    }
+}
+
+var name =person.fullname(); // give value of the function 
+var name = person.fullname ; // give function property mence all function provied you 
+
+
+
+// this keyword is refer to object 
+// it is a keyword 
+
+// adding method in the object 
+
+person.me1 = function(){
+    return "hello this is vishalbaraiya"
+}
+
+// dispaly object in js 
+document.write(person);
+
+// displaye key of the object 
+
+for(var i in person){
+  document.write(i);
+}
+
+// value of this property 
+
+for(var i in person){
+ document.write(person[i]);
+}
+
+// give all values for object as array
+var valueofobject = Object.values(person);
+
+
+// any javascript object cn be converted into string using JSON.stringify() method 
+
+
+const name = JSON.stringify(person);
+
+// now name is a string we can take this as a js string 
+// JSON.stringify() is also used to conver our date into string 
+
+
+// constructure in object 
+// some time we have requried to create many bluprint of the same object 
+// the way to create a object , we used object constructer function 
+// object of the same type are created by calling of the constructer function 
+//with new keyword 
+
+
+
+// constructer function for the person object 
+
+function person(fisrt,last ,age , eye) {
+
+    this.fisrt=fisrt;
+    this.last = last ;
+    this.age = agr ;
+    this.eye =eye;
+}
+
+// create to person object 
+const mother = new person("sally","rally",48,"green");
+const father = new person("kanajibhai","baraiya",54,"blue");
+document.write(father.fisrt + mother.fisrt);
+
+// adding method into object 
+
+father.name = function(){
+    return this.first + " "+ this.last;
+}
+// adding property of the father object 
+father.city = "ahm";
+
+// we can not added a new method to in object constructor  same as existing object 
+// mence we can not added new peopeerty into eisting object constructor directly 
+
+// for that we cqn usse prototype property 
+
+person.prototype.city ="bomby";
+
+// we can also add new method into object constructor 
+
+person.prototype.name = function(){
+    return this.first + " "+ this.last;
+}
+
+
+
+
+// object interables 
+
+//we can use for of loop to iterate 
+// for string
+var name  ="vishal";
+for(var i of name){
+    document.write(i);
+}
+
+for(var i of [1,2,3,4]){
+    // iterating array element 
+}
+
+//iterator protocal defines how to produce a sequence of value from object 
+// in js object become iterator when its impliment next() method 
+
+// made iterable by coder 
+
+function mynumber(){
+    let n =0;
+
+    return {
+        next : function(){
+            n=n+10;
+            return {
+                value:n,
+                done:false
+            }
+        }
+    }
+}
+
+const n = new mynumber();
+n.next();// return 10
+n.next()//20
+// ... its never end 
+
+// example 2 
+
+const myarr = ['apple','banana','mango'];
+
+function name(value){
+    var indexlast = 0;
+    
+    return {
+        next : function(){
+            if(indexlast < value.length){
+               return {
+                fruit : value[indexlast++],
+               done : false 
+               }
+            }else {
+                return {
+                    done:true;
+                }
+            }
+        }
+    }
+}
+
+const namefruit =  new name(myarr);
+
+document.write(namefruit.next()); // apple ,false 
+document.write(namefruit.next()); // banana , false 
+document.write(namefruit.next()); // mango ,false 
+document.write(namefruit.next()); // done 
+
+
+
+// object set in js 
+
+
+// set is a collection of a unique item 
+// set can be store any data type value but it must be unique 
+
+// create a js set 
+ const set = new Set();
+ // add value in the given set using add() method 
+ set.add("a");set.add("b");
+ set.add("c");
+
+
+ // create a variable and aafter add value in the given set 
+ const d="d";
+ const e = "e";
+ set.add(d);
+ set.add(e);
+ // print set value using forEach loop
+
+ set.forEach(function(value){
+    document.write(value ); // print all set value 
+ })
+
+
+// print using values() method 
+
+set.values();
+//  other way 
+
+for(x of set.values()){
+    document.write(x);
+}
+
+// using keys() method 
+// set have no key value 
+
+
+// entries() method in set 
+// [key ,value] provied entries() method but we have no key value in set 
+// so its gives just [value,value ] pair 
+
+const cyz = set.entries();
+// [a,a],[b,b]....
+
+// set is a object 
+var num = set.size ; // give size of the set 
+
+// map in js 
+
+// map is stored key and value pair 
+// key is unique always 
+
+// create a map 
+
+const map = new Map();
+// set() method is used to add eleemnt 
+
+
+map.set("name","vishal");
+map.set("lname","baraiya");
+map.set("age",19);
+
+// access value of the key we can use map.get() method 
+
+document.write(map.get("name")); // vishal
+
+// map.size 
+// give map size 
+
+map.delete("name");
+// delete value and key name
+
+// map.clear()
+// clear all value in the map 
+
+map.clear();
+
+// map.hash()
+// return true if  value in the map 
+
+document.write(map.hash("name"));
+// return false 
+
+// map.keys() return key 
+// map.values() return map value 
+// map.entries() return [key,value]
+
+
+
+// function in js 
+
+// define with function key word 
+
+function functionname (parameters){
+    // code 
+}
+
+// main advantage is code reusable 
+
+// arguments.length give you number of argument in function 
+
+function myf1(a,b){
+    return arguments.length; // returun 2 
+}
+
+// toString () method is return functions as a string 
+
+let text = myf.toString();
+// give function as a string not value 
+
+// function is used to define new object is called object constructer 
+
+// arrow function is used because we have to write less code 
+
+const x = (x1,x2)=>x1*x2;
+
+//parameter in function 
+
+function m1(x,y){
+    if(y==undefined){
+        y = 2;
+    }
+    return x*y;
+}
+
+const value = m1(4);
+
+
+
+
+    </script>
+</body>
+</html>
