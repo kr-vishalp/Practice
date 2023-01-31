@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        hello this is <h1>vishal baraiya </h1>
+    </p>
+    <p id="demo"></p>
+
+    <script>
+       // call , apply and bind method in js 
+
+      /* function student(firstname , lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.fname = function(){
+            return this.firstname +" " + this.lastname;
+        }
+    
+       }
+       var student1 = new student("vishal","baraiya");
+        var fullname =student1.fname();
+          console.log(fullname);
+
+          */
+
+
+
+          // but we have more than one student type function and we want to use this method same 
+          // at that time if we define same value both functuin so its not good for us 
+
+
+    
+
+        /*
+
+        function student(firstname , lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+          }
+
+             function fname(){
+            return this.firstname +" " + this.lastname;
+               }
+
+       function employee(fisrtnam,lastname,department){
+        this.firstname = firstname ;
+        this.lastname = lastname;
+        this.department = department;
+       }
+       var fullname = fname();
+       console.log(fullname);
+       // we try to access fname() then its give undefind value for this 
+       // because for given function fname this value is globle and we can not define firstname and lastname globaly 
+       var student1 = new student("vishal","baraiya");
+*/
+
+
+
+/*
+// for that we can use call() method for pass this value as argument for given function fname
+
+
+       function student(firstname , lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+          }
+
+             function fname(){
+            return this.firstname +" " + this.lastname;
+               }
+
+       function employee(firstname,lastname,department){
+        this.firstname = firstname ;
+        this.lastname = lastname;
+        this.department = department;
+       }
+
+    var employee1 = new employee("jsy","sharma","cs");
+   
+    var fullname =  fname.call(employee1);
+    console.log(fullname);
+
+    */
+
+   /*
+
+    // we can also pass argument in the function fname 
+
+    // for that we can use call() method for pass this value as argument for given function fname
+
+
+    function student(firstname , lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+          }
+
+             function fname(age,college){
+            return this.firstname +" " + this.lastname + " "+ age + " "+ college;
+               }
+
+       function employee(firstname,lastname,department){
+        this.firstname = firstname ;
+        this.lastname = lastname;
+        this.department = department;
+       }
+    var employee1 = new employee("jay","sharma","cs");
+   
+    var fullname =  fname.call(employee1,21,"ld");
+    console.log(fullname);
+
+    */
+
+/*
+
+ // we can also pass argument in the function fname as a array 
+ // first parameter is this value and secound parameter is object 
+  function student(firstname , lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+          }
+
+             function fname(age,college){
+            return this.firstname +" " + this.lastname + " "+ age + " "+ college;
+               }
+
+       function employee(firstname,lastname,department){
+        this.firstname = firstname ;
+        this.lastname = lastname;
+        this.department = department;
+       }
+    var employee1 = new employee("jsy","sharma","cs");
+   
+    var fullname =  fname.apply(employee1,[21,"ld"]);
+    console.log(fullname);
+
+    */
+
+
+    /*
+
+
+
+    // bind() is give you new function 
+
+  function student(firstname , lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+          }
+
+             function fname(){
+            return this.firstname +" " + this.lastname ;
+               }
+
+       function employee(firstname,lastname,department){
+        this.firstname = firstname ;
+        this.lastname = lastname;
+        this.department = department;
+       }
+    var employee1 = new employee("jsy","sharma","cs");
+   
+    var fullname =  fname.bind(employee1); 
+    console.log(fullname);// return function not a function value 
+
+    console.log(fullname()); // return function value 
+
+   // pass parameter in bind function 
+
+   function fullinfo(value,salary){
+    return this.firstname +" "+ this.lastname +" "+ this.department + " " + value + " "+ salary ;
+
+   }
+
+   var fullinfo1 = fullinfo.bind(employee1);
+   var info = fullinfo1(23,50000);
+   console.log(info);
+
+   */
+
+/*
+
+   // js class 
+   // always defined constructer in class 
+
+   class car {
+
+    constructor(name, salary){
+        this.name = name ;
+        this.salary = salary;
+    }
+   
+// if we not difine empty constructer then js define it automaticly 
+// class is a template of the object 
+  fname(){
+    console.log(this.name + " " + this.salary);
+  }
+
+  age(x){
+    console.log(x);
+  }
+
+   }
+let obj = new car("vishal",300000);
+obj.fname(); // vishal 3000...
+obj.age(12);
+
+
+// class inheritance 
+
+// use extends keyword for that 
+
+class Vishal extends car{
+   constructor(name,salary){
+    super(name,salary);
+   }
+    gm(){
+        console.log("good morning ");
+    }
+}
+
+var obj1 = new Vishal("vishalbaraiya",222222222);
+obj1.gm();
+obj1.fname();
+*/
+
+
+
+
+/*
+// getter and setter 
+
+class Fullname{
+
+    constructor(firstname,lastname){
+    this.firstname = firstname ;
+    this.lastname = lastname;
+    }
+    get fname(){
+        return firstname;
+    }
+    set fname(x){
+        this.firstname = x;
+    }
+    get lname(){
+        return lastname;
+    }
+
+    set lname(x){
+        this.lastname = x;
+    }
+
+    name1(){
+        console.log(this.firstname + " " + this.lastname);
+    }
+}
+
+
+let obj = new Fullname("vishal","baraiya");
+console.log(obj.firstname)
+
+obj.name1();
+
+
+*/
+
+/*
+
+//other method for getter and setter just put this. = this._  
+
+class Car {
+  constructor(brand) {
+    this._carname = brand;
+  }
+  get carname() {
+    return this._carname;
+  }
+  set carname(x) {
+    this._carname = x;
+  }
+}
+
+let myCar = new Car("bbb");
+myCar.carname = "nnn";
+document.getElementById("demo").innerHTML = myCar.carname;
+
+*/
+
+
+/*
+
+//  static method in class  
+
+class Car {
+  constructor(name1) {
+    this.name1 = name1;
+  }
+static hello(name) {
+    return "Hello!!" + name;
+  }
+}
+console.log(Car.hello("vis"));
+let ob = new Car("bmw");
+console.log(ob)
+console.log(ob.name1);
+
+// we can not directly call hello method for object  because it is a static so..
+
+//console.log(ob.hello("bbb"));  // its show error 
+
+// for calling static method pass obj as parameter 
+
+Car.hello(ob); // and used value name == obj value 
+*/
+
+
+/*
+
+
+// call back 
+// function call other function  
+
+function sum(num1,num2){
+    return num1+num2;() => {
+    Hell("vishal")
+}
+}
+
+function result(value){
+    console.log("hello " + value);
+}
+result(sum(2,3));
+
+() => {
+    Hell("vishal")
+}
+function result1(value){
+    console.log("hello " + value);
+}
+sum1(4,5);
+*/
+
+// asyncronous js 
+//function runing parallel with other function is called asyncronous 
+
+function Hell(name){
+    console.log("hello this is "+ name);
+}
+
+// setTimeout(Hell("vishal"),8000);
+setTimeout(()=>{
+    Hell
+}, 2000);
+Hell("baraiya"); // first print this not wait for above code 
+
+setTimeout(() => {
+    let date = new Date();
+   console.log( date.getDate());
+}, (2000));  // give date after 2 s
+
+
+
+    </script>
+</body>
+</html>
