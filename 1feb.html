@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- form validation in html  -->
+    <form  name = "form" >
+        <input type="text" name = "name" /> <br>
+        <input type="password" name = "password" />
+        <input type="button" onclick="validation()" value="submit" name = "submit">
+
+    </form>
+<!-- 
+
+
+    
+<form name = "form1">
+    <input type="button" name = "comment" value ="comment" onclick="comment1()">
+     <div id="demodata">
+
+     </div>
+
+
+</form> -->
+
+<!-- <div>
+    <p>hello</p>
+    <p>by</p>
+    <p>no</p>
+    <button onclick="ptagc()">count p tag</button>
+</div> -->
+    <!-- <div class="dom">
+        <form name="form2" >
+            <input type="text" name = "vishal1"id="dom1"/>
+            <input type="button" value = "uppercase"name = "uppercase" onclick="uppercasecon()"/>
+        </form>
+    </div>
+    <br>
+    <form typr="text/javascript" name = "form1">
+        entername <input type="text" name ="name"/>
+        <input type="button " onclick="printvalue()" value="print name "/>
+        <input type="number" name="number"/>
+   <input type="button" onclick="cubevalue()" value = "cube"/>
+    </form>
+    <h1 id="demo">
+     
+    </h1>
+    <p class="vi">
+
+    </p> -->
+
+
+    <script>
+        function validation(){
+            var name = document.form.name.value ;
+            console.log(name);
+            var pass = document.form.password.value;
+            console.log(pass);
+
+            if(name == null || name == "" ){
+                alert("name can not be empty");
+                return false ;
+            }else if(pass.length<6){
+             alert("password length can not be less then 6 ");
+
+            }
+        }
+        // function comment1(){
+        // console.log("please enter your data ");
+        //     var data = "Name:<input type = 'text' name = 'name value = 'name '/> </br> email <input type='email' name ='email' value = 'email'/> </br> <input type = 'button' value = 'submit' name = 'submit' />";
+        // document.getElementById("demodata").innerHTML = data ;
+        // }
+        // function ptagc(){
+        //     var num = document.getElementsByTagName("p");
+        //     console.log(num);
+        //     document.write(num.length);
+           
+        // }
+    //     function uppercasecon(){
+    //         var text = document.getElementsByName("vishal1");
+    //         console.log(text[0].value)
+    //        var text1 = text[0].value.toUpperCase();
+    //         alert(text1);
+    //     }
+    //     function cubevalue(){
+    //         var num = document.form1.number.value ;
+    //        num = num*num*num;
+    //         alert("your number cube is "+ num);
+    //     }
+    //    function printvalue(){
+    //     var name = document.form1.name.value ;
+    //     console.log(name);
+    //     alert("welcome"+ name);
+    //    }
+    //    document.getElementById("demo").innerHTML = "hello ";
+      
+    </script>
+</body>
+</html>
